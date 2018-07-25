@@ -37,4 +37,10 @@ query getPPRCount{
    statement:
       SELECT  mtbc.med.net.Patient_Provider_Relation
 }
+query getPatientAllergies{
+   description: "Select patient allergy relation with patient Id"
+   statement:
+      SELECT  mtbc.med.net.patientAllergy.PatientAllergy
+        WHERE( patientId == _$Id)
+}
 

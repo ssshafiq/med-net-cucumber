@@ -1,6 +1,6 @@
 
 namespace mtbc.med.net
-
+import mtbc.med.net.patientAllergy.*
 enum PermissionType {
   o READ
   o WRITE
@@ -38,6 +38,7 @@ asset Visit identified by visitId {
   o String visitId
   o Patient patient
   o Provider provider
+  o PatientAllergy patientAllergy optional
   // o DateTime dateTime
   
 }

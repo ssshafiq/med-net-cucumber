@@ -1,0 +1,14 @@
+
+namespace mtbc.med.net.patientAllergy
+
+asset PatientAllergy identified by patientId {
+  o String patientId
+  o PatientAllergyHash[] patientAllergyHash
+}
+
+asset PatientAllergyHash identified by id {
+  o String id
+  o String patientAllergyId
+  o String patientReactionId
+  o String patientAllergyHash
+}
