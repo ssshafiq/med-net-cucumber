@@ -1,0 +1,40 @@
+/** queries for Medications business network
+*/
+
+query selectPatients {
+  description: "Select all patients"
+  statement:
+      SELECT mtbc.med.net.Patient
+}
+
+query selectProviders {
+  description: "Select all providers"
+  statement:
+      SELECT mtbc.med.net.Provider
+}
+
+query selectPatientById {
+  description: "Select patient based on their Id"
+  statement:
+      SELECT mtbc.med.net.Patient
+            WHERE (patientId==_$Id)
+}
+
+query selectProviderById {
+  description: "Select provider based on their Id"
+  statement:
+      SELECT mtbc.med.net.Provider
+            WHERE (providerId==_$Id)
+}
+query checkppr{
+   description: "Check if patient provider relation exists or not"
+   statement:
+      SELECT  mtbc.med.net.Patient_Provider_Relation
+        WHERE(patient==_$PatientId AND provider==_$ProviderId)
+}
+query getPPRCount{
+   description: "Check if patient provider relation exists or not"
+   statement:
+      SELECT  mtbc.med.net.Patient_Provider_Relation
+}
+

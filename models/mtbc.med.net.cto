@@ -1,0 +1,74 @@
+
+namespace mtbc.med.net
+
+enum PermissionType {
+  o READ
+  o WRITE
+  o READ_WRITE
+  o NONE
+}
+participant Patient identified by patientId {
+  o String patientId
+  o MedsHash[] medsHash 
+  o DateTime dateTime
+
+  
+}
+participant Provider identified by providerId {
+    
+    o String providerId
+}
+asset MedsHash identified by Id{
+  o String Id
+  o String primarykey
+  o String medsHash
+  --> Visit visit
+  o DateTime dateTime
+  
+}
+asset Patient_Provider_Relation identified by pprId {
+  o String pprId
+  --> Patient  patient
+  --> Provider provider
+  o PermissionType permission 
+}
+
+
+asset Visit identified by visitId {
+  o String visitId
+  o Patient patient
+  o Provider provider
+  // o DateTime dateTime
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

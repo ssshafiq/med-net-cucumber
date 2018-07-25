@@ -1,0 +1,38 @@
+{
+  "name": "med-net",
+  "version": "0.0.45",
+  "description": "Network about Medications in Blockchain",
+  "scripts": {
+    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/med-net.bna",
+    "pretest": "npm run lint",
+    "lint": "eslint .",
+    "test": "cucumber-js"
+  },
+  "author": "fawad",
+  "email": "khfawad1991@gmail.com",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "chai": "latest",
+    "chai-as-promised": "latest",
+    "composer-admin": "^0.19.2",
+    "composer-cli": "^0.19.2",
+    "composer-client": "^0.19.2",
+    "composer-common": "^0.19.2",
+    "composer-connector-embedded": "^0.19.2",
+    "composer-cucumber-steps": "^0.19.2",
+    "cucumber": "^2.2.0",
+    "cucumber-html-reporter": "^4.0.3",
+    "eslint": "^5.0.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "mkdirp": "latest",
+    "mocha": "latest",
+    "nyc": "latest"
+  },
+  "dependencies": {}
+}
