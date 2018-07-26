@@ -43,4 +43,10 @@ query getPatientAllergies{
       SELECT  mtbc.med.net.patientAllergy.PatientAllergy
         WHERE( patientId == _$Id)
 }
+query getPatientImmunization{
+   description: "Select patient Immunization relation with patient Id"
+   statement:
+      SELECT  mtbc.med.net.patientImmunization.PatientImmunization
+        WHERE( patientId == _$Id)
+}
 
