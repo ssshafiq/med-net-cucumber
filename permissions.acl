@@ -29,6 +29,13 @@ rule DefaultPatientAllergy {
     resource: "mtbc.med.net.patientAllergy.*"
     action: ALLOW
 }
+rule DefaultPatientImmunization {
+    description: "Allow all participants access to patient allergy"
+    participant: "ANY"
+    operation: ALL
+    resource: "mtbc.med.net.patientImmunization.*"
+    action: ALLOW
+}
 rule DefaultForTransaction {
     description: "Allow all participants access to all resources"
     participant: "ANY"

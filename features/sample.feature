@@ -368,12 +368,28 @@ Scenario: Testing when new allergy added to patient when not already exist
 
             ]
             """
-            And I update the following asset of type mtbc.med.net.transaction.Contact
-                """
-                 {
-        			  "$class": "mtbc.med.net.patientAllergy.PatientAllergy",
-        			  "patientId": "PAI001",
-        			  "patientAllergyHash": [
+        And I submit the following transaction of type mtbc.med.net.transaction.Contact
+            """
+            [
+            {
+                "$class": "mtbc.med.net.transaction.Contact",
+                "visit": {
+                "$class": "mtbc.med.net.Visit",
+                "visitId": "V001",
+                "patient": {
+                "$class": "mtbc.med.net.Patient",
+                "patientId": "PAI001",
+                "medsHash": [],
+                "dateTime": "2018-07-02T06:57:41.448Z"
+                },
+                "provider": {
+                "$class": "mtbc.med.net.Provider",
+                "providerId": "PRI001"
+                },
+    			"patientAllergy": {
+    			  "$class": "mtbc.med.net.patientAllergy.PatientAllergy",
+    			  "patientId": "PAI001",
+    			  "patientAllergyHash": [
                 {
                   "$class": "mtbc.med.net.patientAllergy.PatientAllergyHash",
                   "id": "5152",
@@ -381,10 +397,16 @@ Scenario: Testing when new allergy added to patient when not already exist
                   "patientReactionId": "R002",
                   "patientAllergyHash": "0x002"
                 }
-        			  ]
+    			  ]
                 }
-                """
 
+                },
+                "transactionId": "bf6567bd-a4a9-49ab-b619-52a967c063dd",
+                "timestamp": "2018-07-02T06:58:09.432Z"
+            }
+
+            ]
+            """
         Then I should have the following asset
         """
         [
