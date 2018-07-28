@@ -2,6 +2,7 @@
 namespace mtbc.med.net
 import mtbc.med.net.patientAllergy.*
 import mtbc.med.net.patientImmunization.*
+import mtbc.med.net.patientPMH.*
 enum PermissionType {
   o READ
   o WRITE
@@ -24,7 +25,7 @@ asset MedsHash identified by Id{
   o String primarykey
   o String medsHash
   --> Visit visit
-  o DateTime dateTime
+  o DateTime dateTime optional
   
 }
 asset Patient_Provider_Relation identified by pprId {
@@ -39,9 +40,9 @@ asset Visit identified by visitId {
   o String visitId
   o Patient patient
   o Provider provider
+  o DateTime dateTime optional
   o PatientAllergy patientAllergy optional
   o PatientImmunization patientImmunization optional
-  // o DateTime dateTime
   
 }
 
