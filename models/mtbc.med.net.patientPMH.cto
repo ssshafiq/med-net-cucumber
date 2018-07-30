@@ -1,7 +1,7 @@
 namespace mtbc.med.net.patientPMH
 asset PatientPMH_History identified by patientId {
   o String patientId
-  o PatientPMH_Diagnosis patientPMH_DiagnosisHashs
+  o PatientPMH_Diagnosis[] patientPMH_DiagnosisHashs
 
 }
 

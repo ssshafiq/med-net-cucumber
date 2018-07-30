@@ -49,4 +49,18 @@ query getPatientImmunization{
       SELECT  mtbc.med.net.patientImmunization.PatientImmunization
         WHERE( patientId == _$Id)
 }
+query getPatientPmh{
+   description: "Select patient PMH relation with patient Id"
+   statement:
+      SELECT  mtbc.med.net.patientPMH.PatientPMH_History
+        WHERE( patientId == _$Id)
+}
+query getPatientFamilyHistoryStructure{
+   description: "Select patient Family History Structure relation with patient Id"
+   statement:
+      SELECT  mtbc.med.net.patientFamiltyHistoryStructure.PatientFamiltyHistoryStructure
+        WHERE( patientId == _$Id)
+}
+
+
 

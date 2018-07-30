@@ -1,0 +1,10 @@
+namespace mtbc.med.net.patientFamiltyHistoryStructure
+asset PatientFamiltyHistoryStructure identified by patientId {
+  o String patientId
+  o PatientFamilyHistoryStructureHash[] patientFamilyHistoryStructureHash
+}
+
+asset PatientFamilyHistoryStructureHash identified by patientFamiltyHistoryStructureId {
+  o String patientFamiltyHistoryStructureId
+  o String patientFamiltyHistoryStructureHash
+}

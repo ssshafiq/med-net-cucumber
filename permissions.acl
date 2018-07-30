@@ -22,6 +22,20 @@ rule Default {
     resource: "mtbc.med.net.*"
     action: ALLOW
 }
+rule PatientFamiltyHistoryStructure {
+  description:  "Allow all participant access to patient Family history structure"
+  participant: "ANY"
+  operation: ALL
+  resource: "mtbc.med.net.patientFamiltyHistoryStructure.*"
+  action: ALLOW
+}
+rule DefaultPatientPMH {
+  description:  "Allow all participant access to patient PMH"
+  participant: "ANY"
+  operation: ALL
+  resource: "mtbc.med.net.patientPMH.*"
+  action: ALLOW
+}
 rule DefaultPatientAllergy {
     description: "Allow all participants access to patient allergy"
     participant: "ANY"
@@ -50,3 +64,6 @@ rule SystemACL {
   resource: "org.hyperledger.composer.system.**"
   action: ALLOW
 }
+
+
+
