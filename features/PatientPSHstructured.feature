@@ -85,8 +85,7 @@ Feature: PatientPSHstructured
             }
         ]
         """
-
-        Scenario: When the Provider add Patient Past Surgical history already exist and updating hash
+     Scenario: When the Provider add Patient Past Surgical history and PSH alrady exist and updating prvious hash
         And I have added the following asset of type mtbc.med.net.Patient_Provider_Relation
             """
             [
@@ -132,11 +131,57 @@ Feature: PatientPSHstructured
                         {
                         "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructuredhash",
                         "patientPSHStructuredId": "2452",
+                        "patientPSHStructuredhash": "Sint esse non."
+                        }
+                    ]
+                    }
+                }
+                }
+            ]
+            """
+        And I submit the following transaction of type mtbc.med.net.transaction.Contact
+            """
+            [
+             {
+                "$class": "mtbc.med.net.transaction.Contact",
+                "visit": {
+                    "$class": "mtbc.med.net.Visit",
+                    "visitId": "9094",
+                    "patient": {
+                    "$class": "mtbc.med.net.Patient",
+                    "patientId": "1095",
+                    "medsHash": [
+                        {
+                        "$class": "mtbc.med.net.MedsHash",
+                        "Id": "8256",
+                        "primarykey": "Est.",
+                        "medsHash": "In ea tempor sit Lorem.",
+                        "visit": "resource:mtbc.med.net.Visit#1835"
+                        }
+                    ],
+                    "dateTime": "2018-07-31T12:59:46.079Z"
+                    },
+                    "provider": {
+                    "$class": "mtbc.med.net.Provider",
+                    "providerId": "0619"
+                    },
+                    "patientPSHStructued": {
+                    "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructued",
+                    "patientId": "1095",
+                    "patientPSHStructuredhashs": [
+                        {
+                        "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructuredhash",
+                        "patientPSHStructuredId": "2452",
                         "patientPSHStructuredhash": "!!!UPDATING HASH!!!"
                         },
-                         {
+                        {
                         "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructuredhash",
                         "patientPSHStructuredId": "2453",
+                        "patientPSHStructuredhash": "Sint esse non."
+                        },
+                        {
+                        "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructuredhash",
+                        "patientPSHStructuredId": "2454",
                         "patientPSHStructuredhash": "Sint esse non."
                         }
                     ]
@@ -157,14 +202,17 @@ Feature: PatientPSHstructured
                         "patientPSHStructuredId": "2452",
                         "patientPSHStructuredhash": "!!!UPDATING HASH!!!"
                         },
-                         {
+                        {
                         "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructuredhash",
                         "patientPSHStructuredId": "2453",
+                        "patientPSHStructuredhash": "Sint esse non."
+                        },
+                        {
+                        "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructuredhash",
+                        "patientPSHStructuredId": "2454",
                         "patientPSHStructuredhash": "Sint esse non."
                         }
                     ]
             }
         ]
         """
- 
- 
