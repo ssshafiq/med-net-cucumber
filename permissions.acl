@@ -29,6 +29,22 @@ rule PatientFamiltyHistoryStructure {
   resource: "mtbc.med.net.patientFamiltyHistoryStructure.*"
   action: ALLOW
 }
+rule PatientPSHStructued {
+  description:  "Allow all participant access to pateint past surgical history structure"
+  participant: "ANY"
+  operation: ALL
+  resource: "mtbc.med.net.patientPSHStructued.*"
+  action: ALLOW
+}
+
+
+rule PatientPSH {
+  description:  "Allow all participant access to patient past surgical history"
+  participant: "ANY"
+  operation: ALL
+  resource: "mtbc.med.net.patientPSH.*"
+  action: ALLOW
+}
 rule DefaultPatientPMH {
   description:  "Allow all participant access to patient PMH"
   participant: "ANY"

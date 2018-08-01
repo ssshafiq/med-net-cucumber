@@ -58,9 +58,21 @@ query getPatientPmh{
 query getPatientFamilyHistoryStructure{
    description: "Select patient Family History Structure relation with patient Id"
    statement:
-      SELECT  mtbc.med.net.patientFamiltyHistoryStructure.PatientFamiltyHistoryStructure
+      SELECT   mtbc.med.net.patientFamiltyHistoryStructure.PatientFamiltyHistoryStructure
         WHERE( patientId == _$Id)
 }
 
+query getPatientPSH{
+   description: "Select patient past surgical history relation with Id"
+   statement:
+      SELECT mtbc.med.net.patientPSH.PatientPSH
+        WHERE( patientId == _$Id)
+}
+query getPatientPSHStructued{
+   description: "Select patientPSHStructued  relation with Id"
+   statement:
+      SELECT  mtbc.med.net.patientPSHStructued.PatientPSHStructued
+        WHERE( patientId == _$Id)
+}
 
 

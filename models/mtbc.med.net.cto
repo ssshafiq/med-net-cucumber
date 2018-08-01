@@ -4,6 +4,8 @@ import mtbc.med.net.patientAllergy.*
 import mtbc.med.net.patientImmunization.*
 import mtbc.med.net.patientPMH.*
 import mtbc.med.net.patientFamiltyHistoryStructure.*
+import mtbc.med.net.patientPSH.*
+import mtbc.med.net.patientPSHStructued.*
 enum PermissionType {
   o READ
   o WRITE
@@ -46,6 +48,8 @@ asset Visit identified by visitId {
   o PatientImmunization patientImmunization optional
   o PatientPMH_History patientPMH_History optional
   o PatientFamiltyHistoryStructure patientFamiltyHistoryStructure optional
+  o PatientPSH patientPSH optional
+  o PatientPSHStructued patientPSHStructued optional
   
 }
 

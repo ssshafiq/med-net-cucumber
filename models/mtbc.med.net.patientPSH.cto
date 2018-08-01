@@ -1,0 +1,11 @@
+namespace mtbc.med.net.patientPSH
+
+asset PatientPSH identified by patientId {
+  o String patientId
+  o PatientPSHhash[] patientPSHhashs
+}
+
+asset PatientPSHhash identified by patientPSHId {
+  o String patientPSHId
+  o String patientPSHhash
+}
