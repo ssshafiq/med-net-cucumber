@@ -1,0 +1,11 @@
+namespace mtbc.med.net.patientPastHosp
+
+asset PatientPastHosp identified by patientId {
+  o String patientId
+  o PatientPastHosphash[] patientPastHosphashs
+}
+
+asset PatientPastHosphash identified by patientPastHospId {
+  o String patientPastHospId
+  o String patientPastHosphash
+}

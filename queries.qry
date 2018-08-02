@@ -75,4 +75,17 @@ query getPatientPSHStructued{
         WHERE( patientId == _$Id)
 }
 
+query getPatientPastHosp{
+   description: "Select patient past hospitilization with relation with Id"
+   statement:
+      SELECT  mtbc.med.net.patientPastHosp.PatientPastHosp
+        WHERE( patientId == _$Id)
+}
+query PatientPastHospStructerd{
+   description: "Select patient past hospitilization structured with relation with Id"
+   statement:
+      SELECT  mtbc.med.net.patientPastHospStructerd.PatientPastHospStructerd
+        WHERE( patientId == _$Id)
+}
+
 

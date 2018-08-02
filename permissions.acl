@@ -22,6 +22,20 @@ rule Default {
     resource: "mtbc.med.net.*"
     action: ALLOW
 }
+rule PatientPastHosp {
+  description:  "Allow all participant access to patient past hosiptilization"
+  participant: "ANY"
+  operation: ALL
+  resource: "mtbc.med.net.patientPastHosp.*"
+  action: ALLOW
+}
+rule PatientPastHospStructerd {
+  description:  "Allow all participant access to patient past hosiptilization structured"
+  participant: "ANY"
+  operation: ALL
+  resource: "mtbc.med.net.patientPastHospStructerd.*"
+  action: ALLOW
+}
 rule PatientFamiltyHistoryStructure {
   description:  "Allow all participant access to patient Family history structure"
   participant: "ANY"
