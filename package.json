@@ -1,6 +1,6 @@
 {
   "name": "med-net",
-  "version": "0.0.50",
+  "version": "0.0.52",
   "description": "Network about Medications in Blockchain",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/med-net.bna",

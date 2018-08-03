@@ -8,6 +8,7 @@ import mtbc.med.net.patientPSH.*
 import mtbc.med.net.patientPSHStructued.*
 import mtbc.med.net.patientPastHosp.*
 import mtbc.med.net.patientPastHospStructerd.*
+import mtbc.med.net.patientOrders.*
 enum PermissionType {
   o READ
   o WRITE
@@ -54,7 +55,12 @@ asset Visit identified by visitId {
   o PatientPSHStructued patientPSHStructued optional
   o PatientPastHosp patientPastHosp optional
   o PatientPastHospStructerd patientPastHospStructerd optional
-  
+  o PatientOrder patientOrder optional
+  o PatientOrderTest[] patientOrderTestList optional
+  o PatientOrderDiagnosis[] patientOrderDiagnosisList optional
+  o PatientOrderSpecimen[] patientOrderSpecimenList optional
+  o PatientOrderQuestion[] patientOrderQuestionList optional
+
 }
 
 

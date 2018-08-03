@@ -1,0 +1,36 @@
+namespace mtbc.med.net.patientOrders
+import mtbc.med.net.Patient
+import mtbc.med.net.Provider
+
+
+asset PatientOrder identified by patientOrderId {
+  o String patientOrderId
+  o String patientOrderHash
+  --> Patient patient
+  --> Provider provider
+}
+
+asset PatientOrderTest identified by patientOrderTestId {
+  o String patientOrderTestId
+  o String patientOrderTestHash
+  --> PatientOrder patientOrder
+}
+
+
+asset PatientOrderDiagnosis identified by patientOrderDiagnosisId {
+  o String patientOrderDiagnosisId
+  o String patientOrderDiagnosHash
+  --> PatientOrder patientOrder
+}
+
+asset PatientOrderSpecimen identified by patientOrderSpecimenId {
+  o String patientOrderSpecimenId
+  o String patientOrderSpecimenHash
+  --> PatientOrderTest patientOrderTest
+}
+
+asset PatientOrderQuestion identified by patientOrderQuestionId {
+  o String patientOrderQuestionId
+  o String patientOrderQuestionHash
+  --> PatientOrderTest patientOrderTest
+}

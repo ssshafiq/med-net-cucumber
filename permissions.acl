@@ -29,6 +29,13 @@ rule PatientPastHosp {
   resource: "mtbc.med.net.patientPastHosp.*"
   action: ALLOW
 }
+rule PatientOrders {
+  description:  "Allow all participant access to patient orders"
+  participant: "ANY"
+  operation: ALL
+  resource: "mtbc.med.net.patientOrders.*"
+  action: ALLOW
+}
 rule PatientPastHospStructerd {
   description:  "Allow all participant access to patient past hosiptilization structured"
   participant: "ANY"
