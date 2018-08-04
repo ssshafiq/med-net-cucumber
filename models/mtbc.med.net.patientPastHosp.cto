@@ -1,11 +1,9 @@
 namespace mtbc.med.net.patientPastHosp
+import mtbc.med.net.Patient
 
-asset PatientPastHosp identified by patientId {
-  o String patientId
-  o PatientPastHosphash[] patientPastHosphashs
-}
 
-asset PatientPastHosphash identified by patientPastHospId {
+asset PatientPastHosp identified by patientPastHospId {
   o String patientPastHospId
   o String patientPastHosphash
+  --> Patient patient
 }

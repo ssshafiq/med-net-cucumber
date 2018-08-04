@@ -1,12 +1,14 @@
 namespace mtbc.med.net.patientPMH
-asset PatientPMH_History identified by patientId {
-  o String patientId
-  o PatientPMH_Diagnosis[] patientPMH_DiagnosisHashs
-
+import mtbc.med.net.Patient
+asset PatientPMH_History identified by patientPMH_HistoryId {
+  o String patientPMH_HistoryId
+  o String patientPMH_HistoryHash
+  --> Patient patient
 }
 
 asset PatientPMH_Diagnosis identified by patientPMHDiagnosisId
  {
   o String patientPMHDiagnosisId
   o String patientPMH_DiagnosisHash
+  --> Patient patient
 }

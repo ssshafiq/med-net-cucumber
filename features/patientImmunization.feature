@@ -55,19 +55,15 @@ Feature: patientImmunization
                     "$class": "mtbc.med.net.Provider",
                     "providerId": "1599"
                     },
-                    "patientImmunization": {
+                    "patientImmunizationlist": [{
                     "$class": "mtbc.med.net.patientImmunization.PatientImmunization",
-                    "patientId": "3684",
-                    "patientImmunizationHash": [
-                        {
-                        "$class": "mtbc.med.net.patientImmunization.PatientImmunizationHash",
-                        "patientImmunizationId": "2837",
-                        "patientImmunizationHash": "Aliquip proident."
-                        }
-                    ]
+                    "patientImmunizationId": "0001",
+                    "patientImmunizationHash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#3684"
                     }
+                    ]
                 }
-                }
+            }
 
             ]
             """
@@ -76,14 +72,9 @@ Feature: patientImmunization
         [
            {
                     "$class": "mtbc.med.net.patientImmunization.PatientImmunization",
-                    "patientId": "3684",
-                    "patientImmunizationHash": [
-                        {
-                        "$class": "mtbc.med.net.patientImmunization.PatientImmunizationHash",
-                        "patientImmunizationId": "2837",
-                        "patientImmunizationHash": "Aliquip proident."
-                        }
-                    ]
+                    "patientImmunizationId": "0001",
+                    "patientImmunizationHash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#3684"
             }
         ]
         """
@@ -128,17 +119,13 @@ Feature: patientImmunization
                     "$class": "mtbc.med.net.Provider",
                     "providerId": "1599"
                     },
-                    "patientImmunization": {
+                     "patientImmunizationlist": [{
                     "$class": "mtbc.med.net.patientImmunization.PatientImmunization",
-                    "patientId": "3684",
-                    "patientImmunizationHash": [
-                        {
-                        "$class": "mtbc.med.net.patientImmunization.PatientImmunizationHash",
-                        "patientImmunizationId": "2837",
-                        "patientImmunizationHash": "Aliquip proident."
-                        }
-                    ]
+                    "patientImmunizationId": "0001",
+                    "patientImmunizationHash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#3684"
                     }
+                ]
                 }
                 }
 
@@ -171,22 +158,19 @@ Feature: patientImmunization
                     "$class": "mtbc.med.net.Provider",
                     "providerId": "1599"
                     },
-                    "patientImmunization": {
+                    "patientImmunizationlist": [{
                     "$class": "mtbc.med.net.patientImmunization.PatientImmunization",
-                    "patientId": "3684",
-                    "patientImmunizationHash": [
-                        {
-                        "$class": "mtbc.med.net.patientImmunization.PatientImmunizationHash",
-                        "patientImmunizationId": "2837",
-                        "patientImmunizationHash": "Aliquip proident."
-                        },
-                        {
-                        "$class": "mtbc.med.net.patientImmunization.PatientImmunizationHash",
-                        "patientImmunizationId": "2838",
-                        "patientImmunizationHash": "Immunization2."
-                        }
-                    ]
+                    "patientImmunizationId": "0001",
+                    "patientImmunizationHash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#3684"
+                    },
+                    {
+                    "$class": "mtbc.med.net.patientImmunization.PatientImmunization",
+                    "patientImmunizationId": "0002",
+                    "patientImmunizationHash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#3684"
                     }
+                ]
                 }
                 }
 
@@ -195,21 +179,17 @@ Feature: patientImmunization
         Then I should have the following asset
         """
         [
-           {
+                    {
                     "$class": "mtbc.med.net.patientImmunization.PatientImmunization",
-                    "patientId": "3684",
-                    "patientImmunizationHash": [
-                        {
-                        "$class": "mtbc.med.net.patientImmunization.PatientImmunizationHash",
-                        "patientImmunizationId": "2837",
-                        "patientImmunizationHash": "Aliquip proident."
-                        },
-                        {
-                        "$class": "mtbc.med.net.patientImmunization.PatientImmunizationHash",
-                        "patientImmunizationId": "2838",
-                        "patientImmunizationHash": "Immunization2."
-                        }
-                    ]
-            }
+                    "patientImmunizationId": "0001",
+                    "patientImmunizationHash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#3684"
+                    },
+                    {
+                    "$class": "mtbc.med.net.patientImmunization.PatientImmunization",
+                    "patientImmunizationId": "0002",
+                    "patientImmunizationHash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#3684"
+                    }
         ]
         """

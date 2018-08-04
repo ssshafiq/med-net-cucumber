@@ -1,11 +1,9 @@
 namespace mtbc.med.net.patientImmunization
+import mtbc.med.net.Patient
 
-asset PatientImmunization identified by patientId {
-  o String patientId
-  o PatientImmunizationHash[] patientImmunizationHash
-}
-
-asset PatientImmunizationHash identified by patientImmunizationId {
+asset PatientImmunization identified by patientImmunizationId {
   o String patientImmunizationId
-  o String patientImmunizationHash
+  o String patientImmunizationHash 
+  --> Patient patient
 }
+

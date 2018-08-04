@@ -1,4 +1,4 @@
-Feature: PatientPastHosp
+Feature: PatientPastHospStructured
 
     Background:
         Given I have deployed the business network definition ..
@@ -54,17 +54,15 @@ Feature: PatientPastHosp
                     "$class": "mtbc.med.net.Provider",
                     "providerId": "8127"
                     },
-                    "patientPastHosp": {
-                    "$class": "mtbc.med.net.patientPastHosp.PatientPastHosp",
-                    "patientId": "8928",
-                    "patientPastHosphashs": [
-                        {
-                        "$class": "mtbc.med.net.patientPastHosp.PatientPastHosphash",
-                        "patientPastHospId": "5189",
-                        "patientPastHosphash": "Reprehenderit fugiat sunt deserunt."
-                        }
-                    ]
+                    "patientPastHospStructerdList": 
+                    [
+                    {
+                    "$class": "mtbc.med.net.patientPastHospStructerd.PatientPastHospStructerd",
+                    "patientPastHospStructerdId": "001",
+                    "patientPastHospStructerdhash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#8928"
                     }
+                    ]
                 }
                 }
             ]
@@ -72,16 +70,11 @@ Feature: PatientPastHosp
         Then I should have the following asset
         """
         [
-           {
-                "$class": "mtbc.med.net.patientPastHosp.PatientPastHosp",
-                    "patientId": "8928",
-                    "patientPastHosphashs": [
-                        {
-                        "$class": "mtbc.med.net.patientPastHosp.PatientPastHosphash",
-                        "patientPastHospId": "5189",
-                        "patientPastHosphash": "Reprehenderit fugiat sunt deserunt."
-                        }
-                    ]
+            {
+            "$class": "mtbc.med.net.patientPastHospStructerd.PatientPastHospStructerd",
+            "patientPastHospStructerdId": "001",
+            "patientPastHospStructerdhash": "HASH",
+            "patient": "resource:mtbc.med.net.Patient#8928"
             }
         ]
         """

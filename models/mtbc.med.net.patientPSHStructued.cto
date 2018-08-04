@@ -1,11 +1,8 @@
 namespace mtbc.med.net.patientPSHStructued
-asset PatientPSHStructued identified by patientId {
-  o String patientId
-  o PatientPSHStructuredhash[]  patientPSHStructuredhashs
+import mtbc.med.net.Patient
 
-}
-
-asset PatientPSHStructuredhash identified by patientPSHStructuredId {
-  o String patientPSHStructuredId
-  o String patientPSHStructuredhash
+asset PatientPSHStructued identified by patientPSHStructuredId {
+ o String patientPSHStructuredId
+ o String patientPSHStructuredhash
+ --> Patient patient
 }

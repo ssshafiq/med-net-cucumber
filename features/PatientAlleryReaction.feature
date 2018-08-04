@@ -1,4 +1,4 @@
-Feature: PatientAllergy
+Feature: PatientAllergyReaction
 
     Background:
         Given I have deployed the business network definition ..
@@ -43,6 +43,14 @@ Scenario: Testing when new allergy added to patient when not already exist
 				  "patientAllergyHash": "HASH",
                   "patient": "resource:mtbc.med.net.Patient#PAI001"
 				}
+            ],
+            "patientReactionList":[ 
+                {
+			      "$class": "mtbc.med.net.patientAllergy.PatientReaction",
+				  "patientReactionId": "R001.",
+				  "patientReactionHash": "HASH",
+                  "PatientAllergy": "mtbc.med.net.patientAllergy.PatientAllergy#AL001"
+				}
             ]
 
             },
@@ -57,11 +65,11 @@ Scenario: Testing when new allergy added to patient when not already exist
     """
     [
       {
-        "$class": "mtbc.med.net.patientAllergy.PatientAllergy",
-        "patientAllergyId": "AL001.",
-        "patientAllergyHash": "HASH",
-        "patient": "resource:mtbc.med.net.Patient#PAI001"
-       }
+        "$class": "mtbc.med.net.patientAllergy.PatientReaction",
+        "patientReactionId": "R001.",
+        "patientReactionHash": "HASH",
+        "PatientAllergy": "mtbc.med.net.patientAllergy.PatientAllergy#AL001"
+      }
     ]
     """
     Scenario: Testing when a patient allergy record already exist
@@ -102,7 +110,15 @@ Scenario: Testing when new allergy added to patient when not already exist
 				  "patientAllergyHash": "HASH",
                   "patient": "resource:mtbc.med.net.Patient#PAI001"
 				}
-                ]
+                ],
+                "patientReactionList":[ 
+                {
+			      "$class": "mtbc.med.net.patientAllergy.PatientReaction",
+				  "patientReactionId": "R001.",
+				  "patientReactionHash": "HASH",
+                  "PatientAllergy": "mtbc.med.net.patientAllergy.PatientAllergy#AL001"
+				}
+               ]
 
                 },
                 "transactionId": "bf6567bd-a4a9-49ab-b619-52a967c063dd",
@@ -135,13 +151,21 @@ Scenario: Testing when new allergy added to patient when not already exist
 				  "patientAllergyId": "AL001.",
 				  "patientAllergyHash": "HASH",
                   "patient": "resource:mtbc.med.net.Patient#PAI001"
-				},
-                {
-			      "$class": "mtbc.med.net.patientAllergy.PatientAllergy",
-				  "patientAllergyId": "AL002.",
-				  "patientAllergyHash": "HASH",
-                  "patient": "resource:mtbc.med.net.Patient#PAI001"
 				}
+                ],
+                "patientReactionList":[ 
+                    {
+                        "$class": "mtbc.med.net.patientAllergy.PatientReaction",
+                        "patientReactionId": "R001.",
+                        "patientReactionHash": "HASH",
+                        "PatientAllergy": "mtbc.med.net.patientAllergy.PatientAllergy#AL001"
+                    },
+                    {
+                        "$class": "mtbc.med.net.patientAllergy.PatientReaction",
+                        "patientReactionId": "R002.",
+                        "patientReactionHash": "HASH",
+                        "PatientAllergy": "mtbc.med.net.patientAllergy.PatientAllergy#AL001"
+                    }
                 ]
 
                 },
@@ -154,17 +178,17 @@ Scenario: Testing when new allergy added to patient when not already exist
         Then I should have the following asset
         """
         [
-          {
-			      "$class": "mtbc.med.net.patientAllergy.PatientAllergy",
-				  "patientAllergyId": "AL001.",
-				  "patientAllergyHash": "HASH",
-                  "patient": "resource:mtbc.med.net.Patient#PAI001"
-				},
-                {
-			      "$class": "mtbc.med.net.patientAllergy.PatientAllergy",
-				  "patientAllergyId": "AL002.",
-				  "patientAllergyHash": "HASH",
-                  "patient": "resource:mtbc.med.net.Patient#PAI001"
-				}
+            {
+            "$class": "mtbc.med.net.patientAllergy.PatientReaction",
+            "patientReactionId": "R001.",
+            "patientReactionHash": "HASH",
+            "PatientAllergy": "mtbc.med.net.patientAllergy.PatientAllergy#AL001"
+            },
+            {
+            "$class": "mtbc.med.net.patientAllergy.PatientReaction",
+            "patientReactionId": "R002.",
+            "patientReactionHash": "HASH",
+            "PatientAllergy": "mtbc.med.net.patientAllergy.PatientAllergy#AL001"
+            }
         ]
         """

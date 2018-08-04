@@ -56,14 +56,10 @@ Feature: PatientPastHosp
                     },
                     "patientPastHosp": {
                     "$class": "mtbc.med.net.patientPastHosp.PatientPastHosp",
-                    "patientId": "8928",
-                    "patientPastHosphashs": [
-                        {
-                        "$class": "mtbc.med.net.patientPastHosp.PatientPastHosphash",
-                        "patientPastHospId": "5189",
-                        "patientPastHosphash": "Reprehenderit fugiat sunt deserunt."
-                        }
-                    ]
+                    "patientPastHospId": "001",
+                    "patientPastHosphash": "HASH",
+                     "patient": "resource:mtbc.med.net.Patient#8928"
+                    
                     }
                 }
                 }
@@ -73,15 +69,11 @@ Feature: PatientPastHosp
         """
         [
            {
-                "$class": "mtbc.med.net.patientPastHosp.PatientPastHosp",
-                    "patientId": "8928",
-                    "patientPastHosphashs": [
-                        {
-                        "$class": "mtbc.med.net.patientPastHosp.PatientPastHosphash",
-                        "patientPastHospId": "5189",
-                        "patientPastHosphash": "Reprehenderit fugiat sunt deserunt."
-                        }
-                    ]
+                    "$class": "mtbc.med.net.patientPastHosp.PatientPastHosp",
+                    "patientPastHospId": "001",
+                    "patientPastHosphash": "HASH",
+                     "patient": "resource:mtbc.med.net.Patient#8928"
+                    
             }
         ]
         """
@@ -124,16 +116,12 @@ Feature: PatientPastHosp
                     "$class": "mtbc.med.net.Provider",
                     "providerId": "8127"
                     },
-                    "patientPastHosp": {
+                   "patientPastHosp": {
                     "$class": "mtbc.med.net.patientPastHosp.PatientPastHosp",
-                    "patientId": "8928",
-                    "patientPastHosphashs": [
-                        {
-                        "$class": "mtbc.med.net.patientPastHosp.PatientPastHosphash",
-                        "patientPastHospId": "5189",
-                        "patientPastHosphash": "Reprehenderit fugiat sunt deserunt."
-                        }
-                    ]
+                    "patientPastHospId": "001",
+                    "patientPastHosphash": "HASH",
+                     "patient": "resource:mtbc.med.net.Patient#8928"
+                    
                     }
                 }
                 }
@@ -166,32 +154,12 @@ Feature: PatientPastHosp
                     "$class": "mtbc.med.net.Provider",
                     "providerId": "8127"
                     },
-                    "patientPastHosp": {
+                   "patientPastHosp": {
                     "$class": "mtbc.med.net.patientPastHosp.PatientPastHosp",
-                    "patientId": "8928",
-                    "patientPastHosphashs": [
-                        {
-                        "$class": "mtbc.med.net.patientPastHosp.PatientPastHosphash",
-                        "patientPastHospId": "5189",
-                        "patientPastHosphash": "!!!UPDATING HASH!!!!"
-                        },
-                        {
-                        "$class": "mtbc.med.net.patientPastHosp.PatientPastHosphash",
-                        "patientPastHospId": "5190",
-                        "patientPastHosphash": "Reprehenderit fugiat sunt deserunt."
-                        },
-                        {
-                        "$class": "mtbc.med.net.patientPastHosp.PatientPastHosphash",
-                        "patientPastHospId": "5191",
-                        "patientPastHosphash": "Reprehenderit fugiat sunt deserunt."
-                        }
-                        ,
-                        {
-                        "$class": "mtbc.med.net.patientPastHosp.PatientPastHosphash",
-                        "patientPastHospId": "5192",
-                        "patientPastHosphash": "Reprehenderit fugiat sunt deserunt."
-                        }
-                    ]
+                    "patientPastHospId": "001",
+                    "patientPastHosphash": "Changed",
+                     "patient": "resource:mtbc.med.net.Patient#8928"
+                    
                     }
                 }
                 }
@@ -200,33 +168,12 @@ Feature: PatientPastHosp
         Then I should have the following asset
         """
         [
-           {
-                "$class": "mtbc.med.net.patientPastHosp.PatientPastHosp",
-                    "patientId": "8928",
-                    "patientPastHosphashs": [
-                        {
-                        "$class": "mtbc.med.net.patientPastHosp.PatientPastHosphash",
-                        "patientPastHospId": "5189",
-                        "patientPastHosphash": "!!!UPDATING HASH!!!!"
-                        },
-                        {
-                        "$class": "mtbc.med.net.patientPastHosp.PatientPastHosphash",
-                        "patientPastHospId": "5190",
-                        "patientPastHosphash": "Reprehenderit fugiat sunt deserunt."
-                        },
-                        
-                        {
-                        "$class": "mtbc.med.net.patientPastHosp.PatientPastHosphash",
-                        "patientPastHospId": "5191",
-                        "patientPastHosphash": "Reprehenderit fugiat sunt deserunt."
-                        }
-                        ,
-                        {
-                        "$class": "mtbc.med.net.patientPastHosp.PatientPastHosphash",
-                        "patientPastHospId": "5192",
-                        "patientPastHosphash": "Reprehenderit fugiat sunt deserunt."
-                        }
-                    ]
+            {
+            "$class": "mtbc.med.net.patientPastHosp.PatientPastHosp",
+            "patientPastHospId": "001",
+            "patientPastHosphash": "Changed",
+            "patient": "resource:mtbc.med.net.Patient#8928"
+
             }
         ]
         """

@@ -54,17 +54,17 @@ Feature: PatientPSHstructured
                     "$class": "mtbc.med.net.Provider",
                     "providerId": "0619"
                     },
-                    "patientPSHStructued": {
+                    
+                    "patientPSHStructuedList": 
+                    [
+                    {
                     "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructued",
-                    "patientId": "1095",
-                    "patientPSHStructuredhashs": [
-                        {
-                        "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructuredhash",
-                        "patientPSHStructuredId": "2452",
-                        "patientPSHStructuredhash": "Sint esse non."
-                        }
-                    ]
+                    "patientPSHStructuredId": "1095",
+                    "patientPSHStructuredhash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#1095"
                     }
+                    ]
+                  
                 }
                 }
             ]
@@ -73,15 +73,10 @@ Feature: PatientPSHstructured
         """
         [
            {
-                 "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructued",
-                    "patientId": "1095",
-                    "patientPSHStructuredhashs": [
-                        {
-                        "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructuredhash",
-                        "patientPSHStructuredId": "2452",
-                        "patientPSHStructuredhash": "Sint esse non."
-                        }
-                    ]
+                    "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructued",
+                    "patientPSHStructuredId": "1095",
+                    "patientPSHStructuredhash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#1095"
             }
         ]
         """
@@ -124,17 +119,15 @@ Feature: PatientPSHstructured
                     "$class": "mtbc.med.net.Provider",
                     "providerId": "0619"
                     },
-                    "patientPSHStructued": {
+                    "patientPSHStructuedList": 
+                    [
+                    {
                     "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructued",
-                    "patientId": "1095",
-                    "patientPSHStructuredhashs": [
-                        {
-                        "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructuredhash",
-                        "patientPSHStructuredId": "2452",
-                        "patientPSHStructuredhash": "Sint esse non."
-                        }
-                    ]
+                    "patientPSHStructuredId": "1095",
+                    "patientPSHStructuredhash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#1095"
                     }
+                    ]
                 }
                 }
             ]
@@ -165,27 +158,27 @@ Feature: PatientPSHstructured
                     "$class": "mtbc.med.net.Provider",
                     "providerId": "0619"
                     },
-                    "patientPSHStructued": {
+                    "patientPSHStructuedList": 
+                    [
+                    {
                     "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructued",
-                    "patientId": "1095",
-                    "patientPSHStructuredhashs": [
-                        {
-                        "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructuredhash",
-                        "patientPSHStructuredId": "2452",
-                        "patientPSHStructuredhash": "!!!UPDATING HASH!!!"
-                        },
-                        {
-                        "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructuredhash",
-                        "patientPSHStructuredId": "2453",
-                        "patientPSHStructuredhash": "Sint esse non."
-                        },
-                        {
-                        "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructuredhash",
-                        "patientPSHStructuredId": "2454",
-                        "patientPSHStructuredhash": "Sint esse non."
-                        }
-                    ]
+                    "patientPSHStructuredId": "1095",
+                    "patientPSHStructuredhash": "CHANGED",
+                    "patient": "resource:mtbc.med.net.Patient#1095"
+                    },
+                    {
+                    "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructued",
+                    "patientPSHStructuredId": "1096",
+                    "patientPSHStructuredhash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#1095"
+                    },
+                    {
+                    "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructued",
+                    "patientPSHStructuredId": "1097",
+                    "patientPSHStructuredhash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#1095"
                     }
+                    ]
                 }
                 }
             ]
@@ -194,25 +187,22 @@ Feature: PatientPSHstructured
         """
         [
            {
-                 "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructued",
-                    "patientId": "1095",
-                    "patientPSHStructuredhashs": [
-                        {
-                        "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructuredhash",
-                        "patientPSHStructuredId": "2452",
-                        "patientPSHStructuredhash": "!!!UPDATING HASH!!!"
-                        },
-                        {
-                        "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructuredhash",
-                        "patientPSHStructuredId": "2453",
-                        "patientPSHStructuredhash": "Sint esse non."
-                        },
-                        {
-                        "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructuredhash",
-                        "patientPSHStructuredId": "2454",
-                        "patientPSHStructuredhash": "Sint esse non."
-                        }
-                    ]
+                    "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructued",
+                    "patientPSHStructuredId": "1095",
+                    "patientPSHStructuredhash": "CHANGED",
+                    "patient": "resource:mtbc.med.net.Patient#1095"
+                    },
+                    {
+                    "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructued",
+                    "patientPSHStructuredId": "1096",
+                    "patientPSHStructuredhash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#1095"
+                    },
+                    {
+                    "$class": "mtbc.med.net.patientPSHStructued.PatientPSHStructued",
+                    "patientPSHStructuredId": "1097",
+                    "patientPSHStructuredhash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#1095"
             }
         ]
         """

@@ -37,24 +37,9 @@ query getPPRCount{
    statement:
       SELECT  mtbc.med.net.Patient_Provider_Relation
 }
-query getPatientAllergies{
-   description: "Select patient allergy relation with patient Id"
-   statement:
-      SELECT  mtbc.med.net.patientAllergy.PatientAllergy
-        WHERE( patientId == _$Id)
-}
-query getPatientImmunization{
-   description: "Select patient Immunization relation with patient Id"
-   statement:
-      SELECT  mtbc.med.net.patientImmunization.PatientImmunization
-        WHERE( patientId == _$Id)
-}
-query getPatientPmh{
-   description: "Select patient PMH relation with patient Id"
-   statement:
-      SELECT  mtbc.med.net.patientPMH.PatientPMH_History
-        WHERE( patientId == _$Id)
-}
+
+
+
 query getPatientFamilyHistoryStructure{
    description: "Select patient Family History Structure relation with patient Id"
    statement:
@@ -62,30 +47,5 @@ query getPatientFamilyHistoryStructure{
         WHERE( patientId == _$Id)
 }
 
-query getPatientPSH{
-   description: "Select patient past surgical history relation with Id"
-   statement:
-      SELECT mtbc.med.net.patientPSH.PatientPSH
-        WHERE( patientId == _$Id)
-}
-query getPatientPSHStructued{
-   description: "Select patientPSHStructued  relation with Id"
-   statement:
-      SELECT  mtbc.med.net.patientPSHStructued.PatientPSHStructued
-        WHERE( patientId == _$Id)
-}
-
-query getPatientPastHosp{
-   description: "Select patient past hospitilization with relation with Id"
-   statement:
-      SELECT  mtbc.med.net.patientPastHosp.PatientPastHosp
-        WHERE( patientId == _$Id)
-}
-query PatientPastHospStructerd{
-   description: "Select patient past hospitilization structured with relation with Id"
-   statement:
-      SELECT  mtbc.med.net.patientPastHospStructerd.PatientPastHospStructerd
-        WHERE( patientId == _$Id)
-}
 
 

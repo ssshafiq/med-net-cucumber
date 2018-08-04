@@ -1,4 +1,4 @@
-Feature: PatientPSH
+Feature: PatientPMHDiagnosis
 
     Background:
         Given I have deployed the business network definition ..
@@ -15,7 +15,7 @@ Feature: PatientPSH
             {"$class": "mtbc.med.net.Visit","visitId": "V001","patient": {"$class": "mtbc.med.net.Patient","patientId": "PAI001","medsHash": [],"dateTime": "2018-07-02T06:46:59.753Z"},"provider": {"$class": "mtbc.med.net.Provider","providerId": "PRI001"}}
         ]
         """
-     Scenario: When the Provider add Patient Past Surgical history
+     Scenario: When the Provider add Patient Past Medical History
         And I have added the following asset of type mtbc.med.net.Patient_Provider_Relation
             """
             [
@@ -35,146 +35,162 @@ Feature: PatientPSH
                 "$class": "mtbc.med.net.transaction.Contact",
                 "visit": {
                     "$class": "mtbc.med.net.Visit",
-                    "visitId": "3000",
+                    "visitId": "0166",
                     "patient": {
                     "$class": "mtbc.med.net.Patient",
-                    "patientId": "0460",
+                    "patientId": "8676",
                     "medsHash": [
                         {
                         "$class": "mtbc.med.net.MedsHash",
-                        "Id": "6852",
-                        "primarykey": "Aliquip occaecat.",
-                        "medsHash": "Excepteur ullamco amet.",
-                        "visit": "resource:mtbc.med.net.Visit#6358"
+                        "Id": "2452",
+                        "primarykey": "Tempor in dolore.",
+                        "medsHash": "Occaecat esse et pariatur magna.",
+                        "visit": "resource:mtbc.med.net.Visit#7421"
                         }
                     ],
-                    "dateTime": "2018-07-31T08:05:35.901Z"
+                    "dateTime": "2018-07-30T09:26:30.645Z"
                     },
                     "provider": {
                     "$class": "mtbc.med.net.Provider",
-                    "providerId": "8618"
+                    "providerId": "0327"
                     },
-                    "patientPSH": {
-                    "$class": "mtbc.med.net.patientPSH.PatientPSH",
-                    "patientPSHId": "001",
-                    "patientPSHhash": "HASH",
-                    "patient": "resource:mtbc.med.net.Patient#0460"
-                    
+                    "patientPMH_DiagnosisList":
+                    [
+                    {
+                    "$class": "mtbc.med.net.patientPMH.PatientPMH_Diagnosis",
+                    "patientPMHDiagnosisId": "001",
+                    "patientPMH_DiagnosisHash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#8676" 
                     }
-                 }
+                    ] 
                 }
-            ]
-            """
-        Then I should have the following asset
-        """
-        [
-            {
-                    "$class": "mtbc.med.net.patientPSH.PatientPSH",
-                    "patientPSHId": "001",
-                    "patientPSHhash": "HASH",
-                    "patient": "resource:mtbc.med.net.Patient#0460"
-                    
-                    }
-        ]
-        """
-      
-       Scenario: When Patient surgical history alrady exist and updating hash and adding multiple tranactions
-        And I have added the following asset of type mtbc.med.net.Patient_Provider_Relation
-            """
-            [
-                {
-                "$class": "mtbc.med.net.Patient_Provider_Relation",
-                "pprId": "1",
-                "patient": "resource:mtbc.med.net.Patient#001",
-                "provider": "resource:mtbc.med.net.Provider#001",
-                "permission": "READ_WRITE"
-                }
-            ]
-            """
-        When I submit the following transaction of type mtbc.med.net.transaction.Contact
-            """
-            [
-             {
-                "$class": "mtbc.med.net.transaction.Contact",
-                "visit": {
-                    "$class": "mtbc.med.net.Visit",
-                    "visitId": "3000",
-                    "patient": {
-                    "$class": "mtbc.med.net.Patient",
-                    "patientId": "0460",
-                    "medsHash": [
-                        {
-                        "$class": "mtbc.med.net.MedsHash",
-                        "Id": "6852",
-                        "primarykey": "Aliquip occaecat.",
-                        "medsHash": "Excepteur ullamco amet.",
-                        "visit": "resource:mtbc.med.net.Visit#6358"
-                        }
-                    ],
-                    "dateTime": "2018-07-31T08:05:35.901Z"
-                    },
-                    "provider": {
-                    "$class": "mtbc.med.net.Provider",
-                    "providerId": "8618"
-                    },
-                   "patientPSH": {
-                    "$class": "mtbc.med.net.patientPSH.PatientPSH",
-                    "patientPSHId": "001",
-                    "patientPSHhash": "HASH",
-                    "patient": "resource:mtbc.med.net.Patient#0460"
-                    
-                    }
-                }
-                }
-            ]
-            """
-        And I submit the following transaction of type mtbc.med.net.transaction.Contact
-            """
-            [
-             {
-                "$class": "mtbc.med.net.transaction.Contact",
-                "visit": {
-                    "$class": "mtbc.med.net.Visit",
-                    "visitId": "3000",
-                    "patient": {
-                    "$class": "mtbc.med.net.Patient",
-                    "patientId": "0460",
-                    "medsHash": [
-                        {
-                        "$class": "mtbc.med.net.MedsHash",
-                        "Id": "6852",
-                        "primarykey": "Aliquip occaecat.",
-                        "medsHash": "Excepteur ullamco amet.",
-                        "visit": "resource:mtbc.med.net.Visit#6358"
-                        }
-                    ],
-                    "dateTime": "2018-07-31T08:05:35.901Z"
-                    },
-                    "provider": {
-                    "$class": "mtbc.med.net.Provider",
-                    "providerId": "8618"
-                    },
-                    "patientPSH": {
-                    "$class": "mtbc.med.net.patientPSH.PatientPSH",
-                    "patientPSHId": "001",
-                    "patientPSHhash": "updating hash",
-                    "patient": "resource:mtbc.med.net.Patient#0460"
-                    
-                    }
-                }
-                }
+             }
             ]
             """
         Then I should have the following asset
         """
         [
            {
-                    "$class": "mtbc.med.net.patientPSH.PatientPSH",
-                    "patientPSHId": "001",
-                    "patientPSHhash": "updating hash",
-                    "patient": "resource:mtbc.med.net.Patient#0460"
-                    
+                    "$class": "mtbc.med.net.patientPMH.PatientPMH_Diagnosis",
+                    "patientPMHDiagnosisId": "001",
+                    "patientPMH_DiagnosisHash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#8676" 
             }
         ]
         """
-  
+
+
+        Scenario: When provider update patient family history structure alrady exist mutiple tranactions
+        And I have added the following asset of type mtbc.med.net.Patient_Provider_Relation
+            """
+            [
+                {
+                "$class": "mtbc.med.net.Patient_Provider_Relation",
+                "pprId": "1",
+                "patient": "resource:mtbc.med.net.Patient#001",
+                "provider": "resource:mtbc.med.net.Provider#001",
+                "permission": "READ_WRITE"
+                }
+            ]
+            """
+        When I submit the following transaction of type mtbc.med.net.transaction.Contact
+            """
+            [
+             {
+                "$class": "mtbc.med.net.transaction.Contact",
+                "visit": {
+                    "$class": "mtbc.med.net.Visit",
+                    "visitId": "0166",
+                    "patient": {
+                    "$class": "mtbc.med.net.Patient",
+                    "patientId": "8676",
+                    "medsHash": [
+                        {
+                        "$class": "mtbc.med.net.MedsHash",
+                        "Id": "2452",
+                        "primarykey": "Tempor in dolore.",
+                        "medsHash": "Dolore.",
+                        "visit": "resource:mtbc.med.net.Visit#7421"
+                        }
+                    ],
+                    "dateTime": "2018-07-30T09:26:30.645Z"
+                    },
+                    "provider": {
+                    "$class": "mtbc.med.net.Provider",
+                    "providerId": "0327"
+                    },
+                     "patientPMH_DiagnosisList":
+                    [
+                    {
+                    "$class": "mtbc.med.net.patientPMH.PatientPMH_Diagnosis",
+                    "patientPMHDiagnosisId": "001",
+                    "patientPMH_DiagnosisHash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#8676" 
+                    }
+                    ] 
+                }
+             }
+            ]
+            """
+          And I submit the following transaction of type mtbc.med.net.transaction.Contact
+            """
+            [
+             {
+                "$class": "mtbc.med.net.transaction.Contact",
+                "visit": {
+                    "$class": "mtbc.med.net.Visit",
+                    "visitId": "0166",
+                    "patient": {
+                    "$class": "mtbc.med.net.Patient",
+                    "patientId": "8676",
+                    "medsHash": [
+                        {
+                        "$class": "mtbc.med.net.MedsHash",
+                        "Id": "2452",
+                        "primarykey": "Tempor in dolore.",
+                        "medsHash": "Dolore.",
+                        "visit": "resource:mtbc.med.net.Visit#7421"
+                        }
+                    ],
+                    "dateTime": "2018-07-30T09:26:30.645Z"
+                    },
+                    "provider": {
+                    "$class": "mtbc.med.net.Provider",
+                    "providerId": "0327"
+                    },
+                    "patientPMH_DiagnosisList":
+                    [
+                    {
+                    "$class": "mtbc.med.net.patientPMH.PatientPMH_Diagnosis",
+                    "patientPMHDiagnosisId": "001",
+                    "patientPMH_DiagnosisHash": "CHANGED",
+                    "patient": "resource:mtbc.med.net.Patient#8676" 
+                    },
+                    {
+                    "$class": "mtbc.med.net.patientPMH.PatientPMH_Diagnosis",
+                    "patientPMHDiagnosisId": "002",
+                    "patientPMH_DiagnosisHash": "HASH",
+                    "patient": "resource:mtbc.med.net.Patient#8676" 
+                    }
+                    ] 
+                }
+             }
+            ]
+            """
+        Then I should have the following asset
+        """
+        [
+           {
+            "$class": "mtbc.med.net.patientPMH.PatientPMH_Diagnosis",
+            "patientPMHDiagnosisId": "001",
+            "patientPMH_DiagnosisHash": "CHANGED",
+            "patient": "resource:mtbc.med.net.Patient#8676" 
+            },
+            {
+            "$class": "mtbc.med.net.patientPMH.PatientPMH_Diagnosis",
+            "patientPMHDiagnosisId": "002",
+            "patientPMH_DiagnosisHash": "HASH",
+            "patient": "resource:mtbc.med.net.Patient#8676" 
+            }
+        ]
+        """

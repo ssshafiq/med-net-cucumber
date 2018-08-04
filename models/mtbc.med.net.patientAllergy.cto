@@ -1,14 +1,14 @@
-
 namespace mtbc.med.net.patientAllergy
+import mtbc.med.net.Patient
 
-asset PatientAllergy identified by patientId {
-  o String patientId
-  o PatientAllergyHash[] patientAllergyHash
+asset PatientAllergy identified by patientAllergyId {
+  o String patientAllergyId
+  o String patientAllergyHash
+  --> Patient patient
 }
 
-asset PatientAllergyHash identified by id {
-  o String id
-  o String patientAllergyId
+asset PatientReaction identified by patientReactionId {
   o String patientReactionId
-  o String patientAllergyHash
+  o String patientReactionHash
+  --> PatientAllergy PatientAllergy
 }

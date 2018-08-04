@@ -58,14 +58,14 @@ rule PatientPSHStructued {
   action: ALLOW
 }
 
-
 rule PatientPSH {
-  description:  "Allow all participant access to patient past surgical history"
+  description:  "Allow all participant access to pateint past surgical history "
   participant: "ANY"
   operation: ALL
   resource: "mtbc.med.net.patientPSH.*"
   action: ALLOW
 }
+
 rule DefaultPatientPMH {
   description:  "Allow all participant access to patient PMH"
   participant: "ANY"

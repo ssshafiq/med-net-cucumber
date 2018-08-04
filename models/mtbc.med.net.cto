@@ -47,14 +47,16 @@ asset Visit identified by visitId {
   o Patient patient
   o Provider provider
   o DateTime dateTime optional
-  o PatientAllergy patientAllergy optional
-  o PatientImmunization patientImmunization optional
+  o PatientAllergy[] patientAllergyList optional
+  o PatientReaction[] patientReactionList optional
+  o PatientImmunization[] patientImmunizationlist optional
   o PatientPMH_History patientPMH_History optional
+  o PatientPMH_Diagnosis[] patientPMH_DiagnosisList optional
   o PatientFamiltyHistoryStructure patientFamiltyHistoryStructure optional
   o PatientPSH patientPSH optional
-  o PatientPSHStructued patientPSHStructued optional
+  o PatientPSHStructued[] patientPSHStructuedList optional
   o PatientPastHosp patientPastHosp optional
-  o PatientPastHospStructerd patientPastHospStructerd optional
+  o PatientPastHospStructerd[] patientPastHospStructerdList optional
   o PatientOrder patientOrder optional
   o PatientOrderTest[] patientOrderTestList optional
   o PatientOrderDiagnosis[] patientOrderDiagnosisList optional
