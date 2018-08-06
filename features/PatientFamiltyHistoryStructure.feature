@@ -56,33 +56,24 @@ Feature: PatientFamiltyHistoryStructure
                         },
                         "patientFamiltyHistoryStructure": {
                         "$class": "mtbc.med.net.patientFamiltyHistoryStructure.PatientFamiltyHistoryStructure",
-                        "patientId": "6648",
-                        "patientFamilyHistoryStructureHash": [
-                            {
-                            "$class": "mtbc.med.net.patientFamiltyHistoryStructure.PatientFamilyHistoryStructureHash",
-                            "patientFamiltyHistoryStructureId": "2894",
-                            "patientFamiltyHistoryStructureHash": "Anim elit consequat ex."
-                            }
-                        ]
+                         "patientFamiltyHistoryStructureId": "001",
+                         "patientFamiltyHistoryStructureHash": "HASH",
+                         "patient": "resource:mtbc.med.net.Patient#6648"
                         }
-                    }
-                    }
+                      }
+             }
 
             ]
             """
         Then I should have the following asset
         """
         [
-           {"$class": "mtbc.med.net.patientFamiltyHistoryStructure.PatientFamiltyHistoryStructure",
-                        "patientId": "6648",
-                        "patientFamilyHistoryStructureHash": [
-                            {
-                            "$class": "mtbc.med.net.patientFamiltyHistoryStructure.PatientFamilyHistoryStructureHash",
-                            "patientFamiltyHistoryStructureId": "2894",
-                            "patientFamiltyHistoryStructureHash": "Anim elit consequat ex."
-                            }
-                        ]
-            }
+           {
+                        "$class": "mtbc.med.net.patientFamiltyHistoryStructure.PatientFamiltyHistoryStructure",
+                         "patientFamiltyHistoryStructureId": "001",
+                         "patientFamiltyHistoryStructureHash": "HASH",
+                         "patient": "resource:mtbc.med.net.Patient#6648"
+             }
         ]
         """
 
@@ -127,14 +118,9 @@ Feature: PatientFamiltyHistoryStructure
                         },
                         "patientFamiltyHistoryStructure": {
                         "$class": "mtbc.med.net.patientFamiltyHistoryStructure.PatientFamiltyHistoryStructure",
-                        "patientId": "6648",
-                        "patientFamilyHistoryStructureHash": [
-                            {
-                            "$class": "mtbc.med.net.patientFamiltyHistoryStructure.PatientFamilyHistoryStructureHash",
-                            "patientFamiltyHistoryStructureId": "2894",
-                            "patientFamiltyHistoryStructureHash": "Anim elit consequat ex."
-                            }
-                        ]
+                         "patientFamiltyHistoryStructureId": "001",
+                         "patientFamiltyHistoryStructureHash": "HASH",
+                         "patient": "resource:mtbc.med.net.Patient#6648"
                         }
                     }
                     }
@@ -169,19 +155,9 @@ Feature: PatientFamiltyHistoryStructure
                         },
                         "patientFamiltyHistoryStructure": {
                         "$class": "mtbc.med.net.patientFamiltyHistoryStructure.PatientFamiltyHistoryStructure",
-                        "patientId": "6648",
-                        "patientFamilyHistoryStructureHash": [
-                            {
-                            "$class": "mtbc.med.net.patientFamiltyHistoryStructure.PatientFamilyHistoryStructureHash",
-                            "patientFamiltyHistoryStructureId": "2894",
-                            "patientFamiltyHistoryStructureHash": "!!!UPDATING HASH!!!"
-                            },
-                            {
-                            "$class": "mtbc.med.net.patientFamiltyHistoryStructure.PatientFamilyHistoryStructureHash",
-                            "patientFamiltyHistoryStructureId": "2895",
-                            "patientFamiltyHistoryStructureHash": "Anim elit consequat ex."
-                            }
-                        ]
+                         "patientFamiltyHistoryStructureId": "002",
+                         "patientFamiltyHistoryStructureHash": "HASH",
+                         "patient": "resource:mtbc.med.net.Patient#6648"
                         }
                     }
                     }
@@ -191,20 +167,17 @@ Feature: PatientFamiltyHistoryStructure
         Then I should have the following asset
         """
         [
-           {"$class": "mtbc.med.net.patientFamiltyHistoryStructure.PatientFamiltyHistoryStructure",
-                        "patientId": "6648",
-                        "patientFamilyHistoryStructureHash": [
-                            {
-                            "$class": "mtbc.med.net.patientFamiltyHistoryStructure.PatientFamilyHistoryStructureHash",
-                            "patientFamiltyHistoryStructureId": "2894",
-                            "patientFamiltyHistoryStructureHash": "!!!UPDATING HASH!!!"
-                            },
-                            {
-                            "$class": "mtbc.med.net.patientFamiltyHistoryStructure.PatientFamilyHistoryStructureHash",
-                            "patientFamiltyHistoryStructureId": "2895",
-                            "patientFamiltyHistoryStructureHash": "Anim elit consequat ex."
-                            }
-                        ]
-            }
+                      {
+                        "$class": "mtbc.med.net.patientFamiltyHistoryStructure.PatientFamiltyHistoryStructure",
+                         "patientFamiltyHistoryStructureId": "001",
+                         "patientFamiltyHistoryStructureHash": "HASH",
+                         "patient": "resource:mtbc.med.net.Patient#6648"
+                        },
+                        {
+                        "$class": "mtbc.med.net.patientFamiltyHistoryStructure.PatientFamiltyHistoryStructure",
+                         "patientFamiltyHistoryStructureId": "002",
+                         "patientFamiltyHistoryStructureHash": "HASH",
+                         "patient": "resource:mtbc.med.net.Patient#6648"
+                        }
         ]
         """

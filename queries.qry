@@ -38,14 +38,3 @@ query getPPRCount{
       SELECT  mtbc.med.net.Patient_Provider_Relation
 }
 
-
-
-query getPatientFamilyHistoryStructure{
-   description: "Select patient Family History Structure relation with patient Id"
-   statement:
-      SELECT   mtbc.med.net.patientFamiltyHistoryStructure.PatientFamiltyHistoryStructure
-        WHERE( patientId == _$Id)
-}
-
-
-
